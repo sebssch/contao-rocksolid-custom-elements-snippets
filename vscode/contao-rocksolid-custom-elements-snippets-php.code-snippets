@@ -1,0 +1,298 @@
+"Rocksolid Custom Element - Checkbox": {
+  "scope": "php",
+  "prefix": "ce-checkbox",
+  "body": [
+    "'checkbox' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['checkbox'],",
+    "    'inputType' => 'checkbox',",
+    "    'eval' => ['tl_class' => 'w50 clr'],",
+    "],"
+  ],
+  "description": "Rocksolid Custom Element - Checkbox"
+}
+"Rocksolid Custom Element - DCA Picker": {
+  "scope": "php",
+  "prefix": "ce-dcapicker",
+  "body": [
+    "'dcapicker' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['field'],",
+    "    'inputType' => 'picker',",
+    "    'eval' => ['context' => 'dc.tl_content', 'tl_class' => 'w50 clr'],",
+    "],"
+  ],
+  "description": "Rocksolid Custom Element - DCA Picker"
+}
+"Rocksolid Custom Element - Group": {
+  "scope": "php",
+  "prefix": "ce-group",
+  "body": [
+    "'group_title' => [",
+    "    'label' => [\\$GLOBALS['TL_LANG']['tl_content']['text_legend'],''],",
+    "    'inputType' => 'group',",
+    "],"
+  ],
+  "description": "Rocksolid Custom Element - Group"
+}
+"Rocksolid Custom Element - Überschrift Standard": {
+  "scope": "php",
+  "prefix": "ce-headline-standard",
+  "body": [
+    "'headline' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['headline'],",
+    "    'inputType' => 'standardField',",
+    "    'options' => ['h1', 'h2', 'h3', 'h4', 'span'],",
+    "    'eval' => ['tl_class' => 'w50 clr', 'allowHtml' => 'true'],",
+    "],"
+  ],
+  "description": "Rocksolid Custom Element - Überschrift Standard"
+}
+"Rocksolid Custom Element - Überschrift Textfeld": {
+  "scope": "php",
+  "prefix": "ce-headline-textfield",
+  "body": [
+    "'headline' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['headline'],",
+    "    'inputType' => 'inputUnit',",
+    "    'options' => ['h1', 'h2', 'h3', 'h4', 'span'],",
+    "    'eval' => ['tl_class' => 'w50 clr', 'allowHtml' => 'true'],",
+    "],"
+  ],
+  "description": "Rocksolid Custom Element - Überschrift Textfeld"
+}
+"Rocksolid Custom Element - Link": {
+  "scope": "php",
+  "prefix": "ce-hyperlink",
+  "body": [
+    "'url' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['MSC']['url'],",
+    "    'inputType' => 'url',",
+    "    'eval' => ['tl_class' => 'w50 clr', 'dcaPicker' => true, 'maxlength'=>255],",
+    "],",
+    "'target' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['MSC']['target'],",
+    "    'inputType' => 'checkbox',",
+    "    'eval' => ['tl_class' => 'w50 m12'],",
+    "],",
+    "'linkTitle' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['linkTitle'],",
+    "    'inputType' => 'text',",
+    "    'eval' => ['tl_class' => 'w50 clr', 'maxlength' => '255'],",
+    "],",
+    "'titleText' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['titleText'],",
+    "    'inputType' => 'text',",
+    "    'eval' => ['tl_class' => 'w50', 'maxlength' => '255'],",
+    "],"
+  ],
+  "description": "Rocksolid Custom Element - Link"
+}
+"Rocksolid Custom Element - Liste": {
+  "scope": "php",
+  "prefix": "ce-list",
+  "body": [
+    "'list' => [",
+    "    'label' => ['de' => ['Liste Label', 'Liste Beschreibung']],",
+    "    'elementLabel' => ['de' => ' %s'],",
+    "    'inputType' => 'list',",
+    "    'minItems' => 1,",
+    "    'maxItems' => 5,",
+    "    'fields' => [",
+    "",
+    "    ],",
+    "],"
+  ],
+  "description": "Rocksolid Custom Element - Liste"
+}
+"Rocksolid Custom Element - Select": {
+  "scope": "php",
+  "prefix": "ce-select",
+  "body": [
+    "'select' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['select'],",
+    "    'inputType' => 'select',",
+    "    'options' => ['1' => 'wert1', '2' => 'wert2'],",
+    "    'eval' => ['tl_class' => 'w50 wizard', 'includeBlankOption'=>true],",
+    "],"
+  ],
+  "description": "Rocksolid Custom Element - Select"
+}
+"Rocksolid Custom Element - Contentelement": {
+  "scope": "php",
+  "prefix": "ce-standard-contentelement",
+  "body": [
+    "<?php",
+    "return [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['rsce_custom_element'],",
+    "    'types' => ['content'],",
+    "    'contentCategory' => 'texts', 'media', 'image', 'eigene',",
+    "    'standardFields' => ['cssID'],",
+    "    'fields' => [",
+    "",
+    "    ],",
+    "];"
+  ],
+  "description": "Rocksolid Custom Element - Contentelement"
+}
+"Rocksolid Custom Element - Module": {
+  "scope": "php",
+  "prefix": "ce-standard-module",
+  "body": [
+    "<?php",
+    "return [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['mod_custom_element'],",
+    "    'types' => ['module'],",
+    "    'moduleCategory' => 'miscellaneous', 'eigene',",
+    "    'standardFields' => ['cssID'],",
+    "    'fields' => [",
+    "",
+    "    ],",
+    "];"
+  ],
+  "description": "Rocksolid Custom Element - Module"
+}
+"Rocksolid Custom Element - Text": {
+  "scope": "php",
+  "prefix": "ce-text",
+  "body": [
+    "'text' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['text'],",
+    "    'inputType' => 'text',",
+    "    'eval' => ['tl_class' => 'long clr', 'rte' => 'tinyMCE', 'helpwizard'=>true],",
+    "    'explanation' => 'insertTags',",
+    "],"
+  ],
+  "description": "Rocksolid Custom Element - Text"
+}
+"Rocksolid Custom Element - Textfeld": {
+  "scope": "php",
+  "prefix": "ce-textfield",
+  "body": [
+    "'textfield' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['text'],",
+    "    'inputType' => 'text',",
+    "    'eval' => ['tl_class' => 'w50 clr'],",
+    "],"
+  ],
+  "description": "Rocksolid Custom Element - Textfeld"
+}
+"Rocksolid Custom Element - Wrapper Start": {
+  "scope": "php",
+  "prefix": "ce-wrapper-start",
+  "body": [
+    "<?php",
+    "return [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['rsce_custom_element'],",
+    "    'types' => ['content'],",
+    "    'contentCategory' => 'media',",
+    "    'standardFields' => ['cssID'],",
+    "    'wrapper' => ['type' => 'start'],",
+    "    'fields' => [",
+    "",
+    "    ],",
+    "];"
+  ],
+  "description": "Rocksolid Custom Element - Wrapper Start"
+}
+"Rocksolid Custom Element - Wrapper Stop": {
+  "scope": "php",
+  "prefix": "ce-wrapper-stop",
+  "body": [
+    "<?php",
+    "return [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['rsce_custom_element'],",
+    "    'types' => ['content'],",
+    "    'contentCategory' => 'media',",
+    "    'standardFields' => ['cssID'],",
+    "    'wrapper' => ['type' => 'stop'],",
+    "    'fields' => [",
+    "",
+    "    ],",
+    "];"
+  ],
+  "description": "Rocksolid Custom Element - Wrapper Stop"
+}
+"Rocksolid Custom Element - Image": {
+  "scope": "php",
+  "prefix": "ce-image",
+  "body": [
+    "'singleSRC' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['singleSRC'],",
+    "    'inputType' => 'fileTree',",
+    "    'eval' => ['filesOnly' => 'true','files' => 'true','fieldType' => 'radio','tl_class' => 'clr w50']",
+    "],",
+    "'size' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['MSC']['imgSize'],",
+    "    'inputType' => 'imageSize',",
+    "    'options' => System::getImageSizes(),",
+    "    'reference' => &\\$GLOBALS['TL_LANG']['MSC'],",
+    "    'eval' => ['rgxp'=>'natural', 'includeBlankOption'=>true, 'nospace'=>true, 'helpwizard'=>true, 'tl_class'=>'clr w50'],",
+    "],",
+    "'floating' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['floating'],",
+    "    'inputType' => 'radioTable',",
+    "    'options' => ['above', 'left', 'right', 'below'],",
+    "    'default' => 'left',",
+    "    'eval' => ['cols'=>4, 'tl_class'=>'w50 clr'],",
+    "    'reference' => &\\$GLOBALS['TL_LANG']['MSC'],",
+    "],",
+    "'fullsize' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['fullsize'],",
+    "    'inputType' => 'checkbox',",
+    "    'eval' => ['tl_class' => 'w50 m12'],",
+    "],",
+    "'overwriteMeta' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['overwriteMeta'],",
+    "    'inputType' => 'checkbox',",
+    "    'eval' => ['tl_class' => 'w50 clr'],",
+    "],",
+    "'alt' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['alt'],",
+    "    'inputType' => 'text',",
+    "    'eval' => ['tl_class' => 'w50 clr', 'maxlength' => 255],",
+    "    'dependsOn' => 'overwriteMeta',",
+    "],",
+    "'imageUrl' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['imageUrl'],",
+    "    'inputType' => 'text',",
+    "    'eval' => ['rgxp'=>'url', 'decodeEntities'=>true, 'maxlength'=>255, 'dcaPicker'=>true, 'addWizardClass'=>false, 'tl_class'=>'w50'],",
+    "    'dependsOn' => 'overwriteMeta',",
+    "],",
+    "'imageTitle' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['imageTitle'],",
+    "    'inputType' => 'text',",
+    "    'eval' => ['tl_class' => 'w50 clr', 'maxlength' => '255'],",
+    "    'dependsOn' => 'overwriteMeta',",
+    "],",
+    "'caption' => [",
+    "    'label' => \\$GLOBALS['TL_LANG']['tl_content']['caption'],",
+    "    'inputType' => 'text',",
+    "    'eval' => ['maxlength'=>255, 'allowHtml'=>true, 'tl_class'=>'w50'],",
+    "    'dependsOn' => 'overwriteMeta',",
+    "],"
+  ],
+  "description": "Rocksolid Custom Element - Image"
+}
+"Rocksolid Custom Element - Galerie": {
+  "scope": "php",
+  "prefix": "ce-gallery",
+  "body": [
+    "'multiSRC' => [",
+    "    'label' => &\\$GLOBALS['TL_LANG']['tl_content']['multiSRC'],",
+    "    'inputType' => 'fileTree',",
+    "    'eval' => ['multiple'=>true, 'filesOnly' => 'true', 'files' => 'true', 'fieldType' => 'checkbox', 'tl_class' => 'clr long', 'isGallery' => true, 'orderField'=>'orderSRC', 'mandatory' => 'true', 'extensions' => 'jpg,jpeg,png,'],",
+    "    'sql' => \"blob NULL\"",
+    "],",
+    "'orderSRC' => [",
+    "    'label' => &\\$GLOBALS['TL_LANG']['tl_content']['orderSRC'],",
+    "    'sql' => \"blob NULL\",",
+    "],",
+    "'size' => [",
+    "    'label' => &\\$GLOBALS['TL_LANG']['MSC']['imgSize'],",
+    "    'inputType' => 'imageSize',",
+    "    'options' => System::getImageSizes(),",
+    "    'reference' => &\\$GLOBALS['TL_LANG']['MSC'],",
+    "    'eval' => ['rgxp'=>'natural', 'includeBlankOption'=>true, 'nospace'=>true, 'helpwizard'=>true, 'tl_class'=>'clr w50'],",
+    "],"
+  ],
+  "description": "Rocksolid Custom Element - Galerie"
+}

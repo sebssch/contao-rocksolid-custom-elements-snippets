@@ -1,0 +1,136 @@
+".html5,.html":
+    'Tempalte: Rocksolid Custom Element - Checkbox':
+      'prefix': 'cete-checkbox'
+      'body': """
+        <?php if ($this->checkbox):?>
+          <?= $this->checkbox ; ?>
+        <?php endif;?>
+    """
+    'Tempalte: Rocksolid Custom Element - Überschrift':
+      'prefix': 'cete-headline-standard'
+      'body': """
+        <?php if ($this->headline): ?>
+            <<?= $this->hl; ?> class="headline <?= $this->hl ?>"><?= $this->headline; ?></<?= $this->hl; ?>>
+        <?php endif; ?>
+    """
+    'Tempalte: Rocksolid Custom Element - Überschrift':
+      'prefix': 'cete-headline-standard'
+      'body': """
+        <?php if ($this->headline): ?>
+            <<?= $this->headline['unit']; ?> class="headline <?= $this->headline['unit']; ?>"><?= $this->headline['value']; ?></<?= $this->headline['unit']; ?>>
+        <?php endif;?>
+    """
+    'Tempalte: Rocksolid Custom Element - Link':
+      'prefix': 'cete-hyperlink'
+      'body': """
+         <?php if ($this->url): ?>
+            <a class="link" href="<?= $this->url; ?>" title="<?= $this->titleText; ?>"<?php if ($this->target): ?> target="_blank" rel="noopener"<?php endif; ?>><?= $this->linkTitle; ?></a>
+        <?php endif;?>
+    """
+    'Tempalte: Rocksolid Custom Element - Liste':
+      'prefix': 'cete-list'
+      'body': """
+        <?php if ($this->list): ?>
+            <?php $isEven=true; $max=count($this->list)-1; foreach($this->list as $i => $list): ?>
+                 <div class="item item_<?= $i; ?><?php if ($i === $max): ?> last<?php elseif ($i===0): ?> first<?php endif; ?><?php if ($isEven): ?> even<?php $isEven = false; ?><?php else: ?> odd<?php $isEven = true; ?><?php endif; ?>">
+        
+                </div>
+            <?php endforeach ;?>
+        <?php endif;?>
+    """
+    'Tempalte: Rocksolid Custom Element - Searchable':
+      'prefix': 'cete-searchable'
+      'body': """
+        <?php $this->extend('block_searchable'); ?>
+        
+        <?php $this->block('headline'); ?>
+        <?php $this->endblock(); ?>
+        
+        <?php $this->block('content'); ?>
+        <?php $this->endblock(); ?>
+    """
+    'Tempalte: Rocksolid Custom Element - Unsearchable':
+      'prefix': 'cete-unsearchable'
+      'body': """
+        <?php $this->extend('block_unsearchable'); ?>
+        
+        <?php $this->block('headline'); ?>
+        <?php $this->endblock(); ?>
+        
+        <?php $this->block('content'); ?>
+        <?php $this->endblock(); ?>
+    """
+    'Tempalte: Rocksolid Custom Element - Select':
+      'prefix': 'cete-select'
+      'body': """
+        <?php if ($this->select): ?>
+            <?= $this->select; ?>
+        <?php endif;?>
+    """
+    'Tempalte: Rocksolid Custom Element - Text':
+      'prefix': 'cete-text'
+      'body': """
+        <?php if ($this->text): ?>
+            <?= $this->text; ?>
+        <?php endif;?>
+    """
+    'Tempalte: Rocksolid Custom Element - Textfield':
+      'prefix': 'cete-textfield'
+      'body': """
+        <?php if ($this->textfield): ?>
+            <span class=""><?= $this->textfield; ?></span>
+        <?php endif;?>
+    """
+    'Tempalte: Rocksolid Custom Element - Bild Contao Basic':
+      'prefix': 'cete-image'
+      'body': """
+        <?php if ($image = $this->getImageObject($this->singleSRC, $this->size)): ?>
+            <?php if ($this->fullsize): ?>
+                <?php $image->fullsize = $this->fullsize; ?>
+            <?php endif;?>
+            <?php if($this->overwriteMeta): ?>
+                <?php $image->floating = ' float_' . $this->floating; ?>
+                <?php $image->alt = $this->alt; ?>
+                <?php $image->caption = $this->caption ?>
+                <?php if ($image->imageUrl): ?>
+                   <?php $image->imageUrl = $this->imageUrl; ?>
+                   <?php $image->href = $this->imageUrl; ?>
+                <?php else:?>
+                   <?php $image->href = \Controller::replaceInsertTags('{{file::' . $this->singleSRC . '}}') ?>
+                <?php endif;?>
+            <?php endif;?>
+            <?php $this->insert('image', json_decode(json_encode($image), true)) ?>
+        <?php endif; ?>
+    """
+    'Tempalte: Rocksolid Custom Element - Bild - Keine Bildgröße':
+      'prefix': 'cete-image-nosize'
+      'body': """
+        <?php if ($image = $this->getImageObject($this->singleSRC, [ 0, 0, '_imagesize'])): ?>
+            <?php if ($this->fullsize): ?>
+                <?php $image->fullsize = $this->fullsize; ?>
+            <?php endif;?>
+            <?php if($this->overwriteMeta): ?>
+                <?php $image->floating = ' float_' . $this->floating; ?>
+                <?php $image->alt = $this->alt; ?>
+                <?php $image->caption = $this->caption ?>
+                <?php if ($image->imageUrl): ?>
+                   <?php $image->imageUrl = $this->imageUrl; ?>
+                   <?php $image->href = $this->imageUrl; ?>
+                <?php else:?>
+                   <?php $image->href = \Controller::replaceInsertTags('{{file::' . $this->singleSRC . '}}') ?>
+                <?php endif;?>
+            <?php endif;?>
+            <?php $this->insert('image', json_decode(json_encode($image), true)) ?>
+        <?php endif; ?>
+    """
+    'Template: Rocksolid Custom Element - Galerie':
+      'prefix': 'cete-gallery'
+      'body': """
+        <?php if ($this->multiSRC): ?>
+            <?php foreach ($this->multiSRC as $i => $singleSRC): ?>
+                <?php if ($image = $this->getImageObject($singleSRC, $this->size)): ?>
+                    <?php $this->insert('image', json_decode(json_encode($image), true)) ?>
+                <?php endif ?>
+            <?php endforeach ?>
+        <?php endif; ?>
+    """
