@@ -3,8 +3,8 @@
   "prefix": "cete-checkbox",
   "body": [
     "<?php if (\\$this->checkbox):?>",
-    "  <?= \\$this->checkbox ; ?>",
-    "<?php endif;?>"
+    "  <?= \\$this->checkbox ?>",
+    "<?php endif; ?>"
   ],
   "description": "Tempalte: Rocksolid Custom Element - Checkbox"
 }
@@ -13,7 +13,7 @@
   "prefix": "cete-headline-standard",
   "body": [
     "<?php if (\\$this->headline): ?>",
-    "    <<?= \\$this->hl; ?> class=\"headline <?= \\$this->hl ?>\"><?= \\$this->headline; ?></<?= \\$this->hl; ?>>",
+    "    <<?= \\$this->hl ?> class=\"headline <?= \\$this->hl ?>\"><?= \\$this->headline ?></<?= \\$this->hl ?>>",
     "<?php endif; ?>"
   ],
   "description": "Tempalte: Rocksolid Custom Element - Überschrift"
@@ -23,8 +23,8 @@
   "prefix": "cete-headline-standard",
   "body": [
     "<?php if (\\$this->headline): ?>",
-    "    <<?= \\$this->headline['unit']; ?> class=\"headline <?= \\$this->headline['unit']; ?>\"><?= \\$this->headline['value']; ?></<?= \\$this->headline['unit']; ?>>",
-    "<?php endif;?>"
+    "    <<?= \\$this->headline['unit'] ?> class=\"headline <?= \\$this->headline['unit'] ?>\"><?= \\$this->headline['value'] ?></<?= \\$this->headline['unit'] ?>>",
+    "<?php endif; ?>"
   ],
   "description": "Tempalte: Rocksolid Custom Element - Überschrift"
 }
@@ -33,8 +33,8 @@
   "prefix": "cete-hyperlink",
   "body": [
     " <?php if (\\$this->url): ?>",
-    "    <a class=\"link\" href=\"<?= \\$this->url; ?>\" title=\"<?= \\$this->titleText; ?>\"<?php if (\\$this->target): ?> target=\"_blank\" rel=\"noopener\"<?php endif; ?>><?= \\$this->linkTitle; ?></a>",
-    "<?php endif;?>"
+    "    <a class=\"link\" href=\"<?= \\$this->url ?>\" title=\"<?= \\$this->titleText ?>\"<?php if (\\$this->target): ?> target=\"_blank\" rel=\"noopener\"<?php endif; ?>><?= \\$this->linkTitle; ?></a>",
+    "<?php endif; ?>"
   ],
   "description": "Tempalte: Rocksolid Custom Element - Link"
 }
@@ -43,12 +43,16 @@
   "prefix": "cete-list",
   "body": [
     "<?php if (\\$this->list): ?>",
-    "    <?php \\$isEven=true; \\$max=count(\\$this->list)-1; foreach(\\$this->list as \\$i => \\$list): ?>",
-    "         <div class=\"item item_<?= \\$i; ?><?php if (\\$i === \\$max): ?> last<?php elseif (\\$i===0): ?> first<?php endif; ?><?php if (\\$isEven): ?> even<?php \\$isEven = false; ?><?php else: ?> odd<?php \\$isEven = true; ?><?php endif; ?>\">",
+    "    <?php",
+    "    \\$isEven = true;",
+    "    \\$max = \count(\\$this->list) - 1;",
+    "    ?>",
+    "    <?php foreach(\\$this->list as \\$i => \\$list): ?>",
+    "         <div class=\"item item_<?= \\$i ?><?php if (\\$i === \\$max): ?> last<?php elseif (\\$i===0): ?> first<?php endif; ?><?php if (\\$isEven): ?> even<?php \\$isEven = false; ?><?php else: ?> odd<?php \\$isEven = true; ?><?php endif; ?>\">",
     "",
     "        </div>",
-    "    <?php endforeach ;?>",
-    "<?php endif;?>"
+    "    <?php endforeach; ?>",
+    "<?php endif; ?>"
   ],
   "description": "Tempalte: Rocksolid Custom Element - Liste"
 }
@@ -85,8 +89,8 @@
   "prefix": "cete-select",
   "body": [
     "<?php if (\\$this->select): ?>",
-    "    <?= \\$this->select; ?>",
-    "<?php endif;?>"
+    "    <?= \\$this->select ?>",
+    "<?php endif; ?>"
   ],
   "description": "Tempalte: Rocksolid Custom Element - Select"
 }
@@ -95,8 +99,8 @@
   "prefix": "cete-text",
   "body": [
     "<?php if (\\$this->text): ?>",
-    "    <?= \\$this->text; ?>",
-    "<?php endif;?>"
+    "    <?= \\$this->text ?>",
+    "<?php endif; ?>"
   ],
   "description": "Tempalte: Rocksolid Custom Element - Text"
 }
@@ -105,8 +109,8 @@
   "prefix": "cete-textfield",
   "body": [
     "<?php if (\\$this->textfield): ?>",
-    "    <span class=\"\"><?= \\$this->textfield; ?></span>",
-    "<?php endif;?>"
+    "    <span class=\"\"><?= \\$this->textfield ?></span>",
+    "<?php endif; ?>"
   ],
   "description": "Tempalte: Rocksolid Custom Element - Textfield"
 }
@@ -114,22 +118,35 @@
   "scope": "html5, html",
   "prefix": "cete-image",
   "body": [
-    "<?php if (\\$image = \\$this->getImageObject(\\$this->singleSRC, \\$this->size)): ?>",
+    "<?php",
+    "\\$image = \\$this->getImageObject(\\$this->singleSRC, \\$this->size);",
+    "?>",
+    "<?php if (null !== \\$image): ?>",
     "    <?php if (\\$this->fullsize): ?>",
     "        <?php \\$image->fullsize = \\$this->fullsize; ?>",
-    "    <?php endif;?>",
+    "    <?php endif; ?>",
     "    <?php if(\\$this->overwriteMeta): ?>",
     "        <?php \\$image->floating = ' float_' . \\$this->floating; ?>",
     "        <?php \\$image->alt = \\$this->alt; ?>",
-    "        <?php \\$image->caption = \\$this->caption ?>",
+    "        <?php \\$image->caption = \\$this->caption; ?>",
     "        <?php if (\\$image->imageUrl): ?>",
     "           <?php \\$image->imageUrl = \\$this->imageUrl; ?>",
     "           <?php \\$image->href = \\$this->imageUrl; ?>",
-    "        <?php else:?>",
-    "           <?php \\$image->href = \\Controller::replaceInsertTags('{{file::' . \\$this->singleSRC . '}}') ?>",
-    "        <?php endif;?>",
-    "    <?php endif;?>",
-    "    <?php \\$this->insert('image', json_decode(json_encode(\\$image), true)) ?>",
+    "        <?php else: ?>",
+    "           <?php",
+    "           $parser = \Contao\System::getContainer()->get('contao.insert_tag.parser');",
+    "           $image->href = $parser->replace('{{file::' . $this->singleSRC . '}}');",
+    "           ?>",
+    "        <?php endif; ?>",
+    "    <?php endif; ?>",
+    "    <?php",
+    "    try {",
+    "       \\$imageData = json_decode(json_encode(\\$image, JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR);",
+    "    } catch (\JsonException \\$exception) {",
+    "       \\$imageData = [];",
+    "    }",
+    "    ?>",
+    "    <?php \\$this->insert('image', \\$imageData); ?>",
     "<?php endif; ?>"
   ],
   "description": "Tempalte: Rocksolid Custom Element - Bild Contao Basic"
@@ -138,22 +155,35 @@
   "scope": "html5, html",
   "prefix": "cete-image-nosize",
   "body": [
-    "<?php if (\\$image = \\$this->getImageObject(\\$this->singleSRC, [ 0, 0, '_imagesize'])): ?>",
+    "<?php",
+    "\\$image = \\$this->getImageObject(\\$this->singleSRC, [ 0, 0, '_imagesize']);",
+    "?>",
+    "<?php if (null !== \\$image): ?>",
     "    <?php if (\\$this->fullsize): ?>",
     "        <?php \\$image->fullsize = \\$this->fullsize; ?>",
-    "    <?php endif;?>",
+    "    <?php endif; ?>",
     "    <?php if(\\$this->overwriteMeta): ?>",
     "        <?php \\$image->floating = ' float_' . \\$this->floating; ?>",
     "        <?php \\$image->alt = \\$this->alt; ?>",
-    "        <?php \\$image->caption = \\$this->caption ?>",
+    "        <?php \\$image->caption = \\$this->caption; ?>",
     "        <?php if (\\$image->imageUrl): ?>",
     "           <?php \\$image->imageUrl = \\$this->imageUrl; ?>",
     "           <?php \\$image->href = \\$this->imageUrl; ?>",
-    "        <?php else:?>",
-    "           <?php \\$image->href = \\Controller::replaceInsertTags('{{file::' . \\$this->singleSRC . '}}') ?>",
-    "        <?php endif;?>",
-    "    <?php endif;?>",
-    "    <?php \\$this->insert('image', json_decode(json_encode(\\$image), true)) ?>",
+    "        <?php else: ?>",
+    "           <?php",
+    "           $parser = \Contao\System::getContainer()->get('contao.insert_tag.parser');",
+    "           $image->href = $parser->replace('{{file::' . $this->singleSRC . '}}');",
+    "           ?>",
+    "        <?php endif; ?>",
+    "    <?php endif; ?>",
+    "    <?php",
+    "    try {",
+    "       \\$imageData = json_decode(json_encode(\\$image, JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR);",
+    "    } catch (\JsonException \\$exception) {",
+    "       \\$imageData = [];",
+    "    }",
+    "    ?>",
+    "    <?php \\$this->insert('image', \\$imageData); ?>",
     "<?php endif; ?>"
   ],
   "description": "Tempalte: Rocksolid Custom Element - Bild - Keine Bildgröße"
@@ -164,10 +194,20 @@
   "body": [
     "<?php if (\\$this->multiSRC): ?>",
     "    <?php foreach (\\$this->multiSRC as \\$i => \\$singleSRC): ?>",
-    "        <?php if (\\$image = \\$this->getImageObject(\\$singleSRC, \\$this->size)): ?>",
-    "            <?php \\$this->insert('image', json_decode(json_encode(\\$image), true)) ?>",
-    "        <?php endif ?>",
-    "    <?php endforeach ?>",
+    "        <?php",
+    "        \\$image = \\$this->getImageObject(\\$singleSRC, \\$this->size);",
+    "        ?>",
+    "        <?php if (null !== \\$image): ?>",
+    "            <?php",
+    "            try {",
+    "                \\$imageData = json_decode(json_encode(\\$image, JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR);",
+    "            } catch (\JsonException \\$exception) {",
+    "                \\$imageData = [];",
+    "            }",
+    "            ?>",
+    "            <?php \\$this->insert('image', \\$imageData); ?>",
+    "        <?php endif; ?>",
+    "    <?php endforeach; ?>",
     "<?php endif; ?>"
   ],
   "description": "Template: Rocksolid Custom Element - Galerie"
