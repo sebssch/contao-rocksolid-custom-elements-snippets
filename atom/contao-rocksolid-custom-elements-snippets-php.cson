@@ -51,7 +51,7 @@
         'url' => [
             'label' => $GLOBALS['TL_LANG']['MSC']['url'],
             'inputType' => 'url',
-            'eval' => ['tl_class' => 'w50 clr', 'dcaPicker' => true, 'maxlength'=>255],
+            'eval' => ['tl_class' => 'w50 clr', 'dcaPicker' => true, 'maxlength' => 255],
         ],
         'target' => [
             'label' => $GLOBALS['TL_LANG']['MSC']['target'],
@@ -90,7 +90,7 @@
             'label' => $GLOBALS['TL_LANG']['tl_content']['select'],
             'inputType' => 'select',
             'options' => ['1' => 'wert1', '2' => 'wert2'],
-            'eval' => ['tl_class' => 'w50 wizard', 'includeBlankOption'=>true],
+            'eval' => ['tl_class' => 'w50 wizard', 'includeBlankOption' => true],
         ],
     """
     'Rocksolid Custom Element - Contentelement':
@@ -127,7 +127,7 @@
         'text' => [
             'label' => $GLOBALS['TL_LANG']['tl_content']['text'],
             'inputType' => 'text',
-            'eval' => ['tl_class' => 'long clr', 'rte' => 'tinyMCE', 'helpwizard'=>true],
+            'eval' => ['tl_class' => 'long clr', 'rte' => 'tinyMCE', 'helpwizard' => true],
             'explanation' => 'insertTags',
         ],
     """
@@ -183,14 +183,14 @@
             'inputType' => 'imageSize',
             'options' => System::getImageSizes(),
             'reference' => &$GLOBALS['TL_LANG']['MSC'],
-            'eval' => ['rgxp'=>'natural', 'includeBlankOption'=>true, 'nospace'=>true, 'helpwizard'=>true, 'tl_class'=>'clr w50'],
+            'eval' => ['rgxp' => 'natural', 'includeBlankOption' => true, 'nospace' => true, 'helpwizard' => true, 'tl_class' => 'clr w50'],
         ],
         'floating' => [
             'label' => $GLOBALS['TL_LANG']['tl_content']['floating'],
             'inputType' => 'radioTable',
             'options' => ['above', 'left', 'right', 'below'],
             'default' => 'left',
-            'eval' => ['cols'=>4, 'tl_class'=>'w50 clr'],
+            'eval' => ['cols' => 4, 'tl_class' => 'w50 clr'],
             'reference' => &$GLOBALS['TL_LANG']['MSC'],
         ],
         'fullsize' => [
@@ -212,7 +212,7 @@
         'imageUrl' => [
             'label' => $GLOBALS['TL_LANG']['tl_content']['imageUrl'],
             'inputType' => 'text',
-            'eval' => ['rgxp'=>'url', 'decodeEntities'=>true, 'maxlength'=>255, 'dcaPicker'=>true, 'addWizardClass'=>false, 'tl_class'=>'w50'],
+            'eval' => ['rgxp' => 'url', 'decodeEntities' => true, 'maxlength' => 255, 'dcaPicker' => true, 'addWizardClass' => false, 'tl_class' => 'w50'],
             'dependsOn' => 'overwriteMeta',
         ],
         'imageTitle' => [
@@ -224,7 +224,7 @@
         'caption' => [
             'label' => $GLOBALS['TL_LANG']['tl_content']['caption'],
             'inputType' => 'text',
-            'eval' => ['maxlength'=>255, 'allowHtml'=>true, 'tl_class'=>'w50'],
+            'eval' => ['maxlength' => 255, 'allowHtml' => true, 'tl_class' =>  'w50'],
             'dependsOn' => 'overwriteMeta',
         ],
     """
